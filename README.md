@@ -44,39 +44,7 @@ my-app/
 Step 4: Add Your Sub-schema Files
 Create sub-schema files in the prisma/schema/ directory. For example:
 
-User Schema (user.prisma)
-prisma
-Copy code
-model User {
-    id        String    @id @default(auto()) @map("_id") @db.ObjectId
-    name      String
-    password  String
-    email     String
-    role      String?
-    country   String?
-    profession String?
-    avatar    String?
-}
-Post Schema (post.prisma)
-prisma
-Copy code
-model Post {
-    id        String    @id @default(auto()) @map("_id") @db.ObjectId
-    title     String
-    content   String
-    authorId  String    @db.ObjectId
-    createdAt DateTime  @default(now())
-}
-OTP Schema (otp.prisma)
-prisma
-Copy code
-model OTP {
-    id        String   @id @default(auto()) @map("_id") @db.ObjectId
-    otp       String
-    email     String
-    expiresAt DateTime
-    createdAt DateTime @default(now())
-}
+
 Step 5: Run Prisma Commands
 After setting up your schemas, you can run Prisma commands normally. For example, to push your schema changes to the database, use:
 
